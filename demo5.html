@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var person = {
+          name:'John',
+          age:31,
+          favColor:'green',
+          height:183
+      }
+      var x = person.age
+      var y = person['age']
+
+      //
+      var course = {naem:'JS',lessons:54}
+      console.log(course.name.length)//->2
+      //var ourDog ={
+          name :'Camper',
+          Tegs:4,
+          tails:1,
+          friends:['everything!']
+      }
+      //
+      ourDog.name = 'Happy Camper'
+      ourDog['name'] = 'Happer Camper'
+      //
+      var ourDog = {
+          name:'Camper',
+          legs:4,
+          tails:1,
+          friends:['everything!']
+      }
+      ourDog.bark = 'bow-wow'//等价于ourDog['bark'] = 'bow-wow';
+       //
+       var ourDog = {
+          name:'Camper',
+          legs:4,
+          tails:1,
+          friends:['everything!']
+      }
+      var c1 = ourDog['tails']
+      //删除tails属性
+      delete ourDog['tails']
+      var c2 = ourDog['tails']
+      console.log(ourDog)
+
+      //对象方法
+      var message = 'Hello World!';
+      var x = message.toUpperCase();
+      //
+      var a = 'age'
+      var myObj = {
+          name:'Loen',
+          age:'28',
+          eat:function(){
+              return "I'm eating"
+          }
+      }
+      console.log(myObj['name'])
+      console.log(myObj[a])
+      console.log(myObj['eat']())
+
+      //对象构造器
+      function person(firstName,lastName,age,eyeColor){
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age= age;
+          this.eyeColor = eyeColor;
+      }
+      //
+      var myFather = new person('John','Doe',50,'blue')
+      var myMother =  new person('Sally','Rally',48,'green')
+      console.log(myFather.age)
+      console.log(myMother.firstName)
+      //对象初始化
+      var John = {name:'John',age :28}
+      var Loen = {name: 'Loen',age:23}
+
+      var John = {
+          name : 'John',
+          age :23
+      }
+      var Loen = {
+          name:'Loen',
+          age:28
+      }
+      //添加方法
+      methodName :function(){code lines}
+      ObjectName.methodName()
+      //
+      function person(name,age){
+          this.name= name
+          this.age = age
+          this.changeName = function(name){
+              this.name = name
+          }
+      }
+      var p = new person('Loen',28)
+      p.changeName('John')
+      //
+      function person(name,age){
+          this.name = name
+          this.age = age
+          this.yearOfBirth = bornYear
+      }
+      function bornYear(){
+          return new Date().getFullYear()-this.age
+      }
+    </script>
+  </body>
+</html>
