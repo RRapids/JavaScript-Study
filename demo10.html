@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=function validate() {  var n1 = document.getElementById("num1");  var n2 =
+    document.getElementById("num2");  if(n1.value != "" && n2.value != "") {    if(n1.value == n2.value) {      return
+    true;   } }  alert("输入两个值不相等,请重新输入!");  return false; }, initial-scale=1.0">
+    <title>JavaScript正则表达式</title>
+  </head>
+  <body>
+    <script>
+      //什么是正则表达式
+      var patt = /w3cschool/i
+      //使用字符串方法
+      var str = 'Visit w3cschool'
+      var n = str.search(/w3cschool/i) //输出6
+      //检索字符串w3cschool"的字符串
+      var str = 'Visit w3cschool!'
+      var n = str.search('w3cschool')
+      //使用正则表达式且不区分大小写将字符串中的 Microsoft 替换为 w3cschool :
+      var str = 'Visit Microsoft!'
+      var res = str.replace(/microsoft/i, 'w3cschool')
+      //replace() 方法将接收字符串作为参数：
+      var str = 'Visit Microsoft!'
+      var res = str.replace('Microsoft', 'w3cschool')
+    </script>
+  </body>
+</html>
