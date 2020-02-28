@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      #container {
+         width: 600px;
+         height: 400px;
+         background: rgb(170, 199, 170);
+         position: relative;
+      }
+      #box {
+         width: 60px;
+         height: 60px;
+         background: rgb(211, 144, 144);
+         position: absolute;
+      }
+    </style>
+    <script>
+      var t = setInterval(move, 500)
+      //定义 move() 函数，改变框的位置。
+      // 定义开始的位置
+      var pos = 0
+      // 获取box元素
+      var box = document.getElementById('box')
+      function move() {
+        pos += 1
+        box.style.left = pos + 'px' //px = pixels
+      }
+      //每10毫秒调用 move() 函数的定时器
+      var t = setInterval(move, 10)
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t)
+        } else {
+          pos += 1
+          box.style.left = pos + 'px'
+        }
+      }
+      //终的脚本代码如下：
+      var pos = 0 // 盒子元素
+      var box = document.getElementById('box')
+      var t = setInterval(move, 10)
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t)
+        } else {
+          pos += 1
+          box.style.left = pos + 'px'
+        }
+      }
+
+      //Document对象
+      document.body.innerHTML = 'Some text'
+      //选择元素
+      //通过 id 找元素
+      document.getElementById(id)
+      //通过 类 找元素
+      document.getElementsByClassName(name)
+      //通过 标签 找元素
+      document.getElementsByTagName(name)
+
+      //，getElementById 方法用于选择 id="demo" 的元素并更改其内容：
+      var elem = document.getElementById('demo')
+      elem.innerHTML = 'Hello World'
+
+      //例如HTML页面包含三个元素与 class="demo"，以下代码将返回所有这些元素作为一个数组
+     /* <div class="demo">  
+        <span class="demo">Hi I'm Loen!</span>
+        </div>
+         <p class="demo">This is a paragraph</p> 
+         <script> 
+         var arr =  document.getElementsByClassName("demo"); 
+         //访问第二个元素 arr[1].innerHTML = "Hi I am Peter"; 
+         </script>
+         */
+
+         //以下示例获取页面的所有段落元素并更改其内容：
+         /*
+         <p>hi</p>
+          <p>hello</p>
+           <p>hi</p> 
+           <script> 
+           var arr = document.getElementsByTagName("p");
+            for (var x = 0; x < arr.length; x++) { 
+                 arr[x].innerHTML = "Hi there"; 
+                } 
+            </script>
+            */
+        
+        //使用DOM
+        //例如，我们可以选择元素的所有子节点并更改其内容：
+        /*
+        <html>
+          <body>  
+           <div id ="demo">     
+           <p>一些文本</p>     
+           <p>另一些文本 </p>   
+           </div>   
+           <script> 
+              var a = document.getElementById("demo");   
+            var arr = a.childNodes;   
+            for(var x=0;x<arr.length;x++) {   
+                  arr[x].innerHTML = "新的文本"; 
+                  }   
+               </script>
+             </body> 
+            </html>
+            */
+
+            //改变属性
+            <img id="my-img" src="1.jpg" alt="" />
+             <script>  var el = document.getElementById("my-img"); // 通过id="my-img"获取元素 
+              el.src = "2.jpg"; 
+             </script>
+             //更改链接的href属性：
+             <a href="http://www.baidu.com">百度</a> 
+             <script> 
+              var el = document.getElementsByTagName("a"); 
+              el[0].href = "https://www.google.cn"; 
+              el[0].innerHTML = "google";
+              </script>
+              //改变样式
+              <div id="demo" style="width:200px">一些文本</div> 
+              <script> 
+               var x = document.getElementById("demo");
+                x.style.color = "6600FF"; 
+                x.style.width = "100px"; 
+               </script>
+
+               //添加和移除元素
+               var node = document.createTextNode("一些新的文本");
+
+               <div id ="demo">一些文本</div>
+            <script>  
+            //创建一个新的段落  
+            var p = document.createElement("p"); 
+             var node = document.createTextNode("一些新的文本");  
+            //添加文本到段落
+             p.appendChild(node);
+             var div = document.getElementById("demo");  
+            //将段落添加到div中  
+            div.appendChild(p);
+            </script>
+            
+            //替换元素
+            //要替换HTML元素，使用 element.replaceChild(newNode,oldNode) 方法。
+            <div id="demo">  
+            <p id="p1">这是一个段落</p>  
+            <p id="p2">这是另一个段落</p>
+             </div>
+            <script> 
+            var p = document.createElement("p"); 
+            var node = document.createTextNode("这是新的文本"); 
+            p.appendChild(node);
+            var parent = document.getElementById("demo"); 
+            var child = document.getElementById("p1"); 
+            parent.replaceChild(p, child); 
+            </script>
+
+
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="box"></div>
+    </div>
+  </body>
+</html>
